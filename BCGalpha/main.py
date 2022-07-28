@@ -2,7 +2,7 @@ from random import randrange, choice
 from time import time
 from math import ceil
 import pandas as pd
-import heapq
+# import heapq
 
 
 PATH = ["Djibouti", "Qatar", "Uruguay", "Western Sahara", "Zimbabwe"]
@@ -18,7 +18,7 @@ CITY_LIMIT = 1000
 def readInstance(indexPath):
 
     with open("../data/processed/" + PATH[indexPath] + ".tsp", "r") as f:
-            lines = f.readlines()
+        lines = f.readlines()
 
     for i in range(len(lines)):
         lines[i] = lines[i].split()
@@ -58,9 +58,9 @@ def BCGa(tInitial, tLimit, matrizDistancias, nCidades):
 
         while len(solution) != nCidades:
 
-            # localCities.sort(key=lambda x: matrizDistancias[atualCity][x])
-            heapq.nlargest(ceil(len(localCities) * 0.3), localCities,
-                           key=lambda x: matrizDistancias[atualCity][x])
+            localCities.sort(key=lambda x: matrizDistancias[atualCity][x])
+            # heapq.nlargest(ceil(len(localCities) * 0.3), localCities,
+            #                key=lambda x: matrizDistancias[atualCity][x])
 
             chosen = choice(
                 localCities[:ceil(len(localCities) * 0.3)])
