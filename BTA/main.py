@@ -11,7 +11,7 @@ CITY_LIMIT = 1000
 # retorna a matriz de adjacencia da cidade em PATH[indexPath]
 def readInstance(indexPath):
 
-    with open("./data/" + PATH[indexPath] + ".tsp", "r") as f:
+    with open("../data/" + PATH[indexPath] + ".tsp", "r") as f:
         lines = f.readlines()
 
     for i in range(len(lines)):

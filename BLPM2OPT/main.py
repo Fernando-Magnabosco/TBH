@@ -13,7 +13,7 @@ CITY_LIMIT = 1000
 
 def readInstance(indexPath):
 
-    with open("./data/" + PATH[indexPath] + ".tsp", "r") as f:
+    with open("../data/" + PATH[indexPath] + ".tsp", "r") as f:
         lines = f.readlines()
 
     for i in range(len(lines)):
